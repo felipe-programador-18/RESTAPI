@@ -4,7 +4,7 @@ const port = process.env.PORT || 3000
 
 const mongo = process.env.MONGO ||  'mongodb://localhost/minhas-series-rest'
 const mongoose = require('mongoose')
-mongoose.Promise = gloabl.Promise
+mongoose.Promise = global.Promise
 
 const movies = require('./routes/series')
 api.use('/series', movies)
@@ -19,9 +19,11 @@ api.use('/series', movies)
 //})
 
 mongoose.
-connect(mongo, {useMongoClient:true})
+connect(mongo, {useNewUrlParser: true, 
+  useUnifiedTopology: true
+})
 .then(() =>{
-  api.listen(port , ()=> console.log('starting server'))
+  api.listen(port , ()=> console.log('...starting server'))
 })
 .catch(e => console.log(e))
 
