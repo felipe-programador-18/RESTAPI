@@ -1,6 +1,7 @@
 const express = require('express')
 const api = express()
 const port = 3000
+const mongoose = require('mongoose')
 
 const movies = require('./routes/series')
 api.use('/series', movies)
