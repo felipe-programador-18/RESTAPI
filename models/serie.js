@@ -18,6 +18,6 @@ const serieSchema = mongoose.Schema({
     comments: [Commentschema]
 })
 
-const Serie = mongoose.define('Serie', serieSchema);
+const Serie = mongoose.model('Serie', serieSchema);
 
 module.exports = Serie
