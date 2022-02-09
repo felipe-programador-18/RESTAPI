@@ -8,6 +8,21 @@ const series = [{
     nametree:'Wolverine'
 }]
 
+//create router to get post
+router.post('/', async (req,res) => {
+   const serie  = new Serie(req.body)
+   try{
+       await serie.save()
+       res.send(serie)
+   }catch(e){
+       res.send({
+           success: false,
+           errors: Object.keys(e.errors)
+       })
+   }
+})
+
+// create router to caught get
 router.get('/', async(req,res) =>{
     const series = await Serie.find({})
     res.send([series])
