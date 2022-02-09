@@ -24,11 +24,6 @@ api.use('/series', movies)
 const teste = require('./routes/series')
 api.use('/',teste)
 
-api.get('/', (req, res) =>{
-    
-  res.render('home')
-
-})
 
 mongoose.
 connect(mongo, {useNewUrlParser: true, 
