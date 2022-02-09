@@ -7,15 +7,19 @@ router.get('/', async (req, res) => {
     res.send(series)
   })
 
+  // OUTRA GET PARA TENTAR VER SE PEGO O CSS
   router.get('/', (req, res) =>{
-    
+    if(error){
     res.render('home', {
+      error:false
     })
-
+  }else{
+    res.render('home', {
+      error:('parabens vc consegiu')
+    })
+  }
   })
 
-
-  
 
   router.post('/', async (req, res) => {
     const serie = new Serie(req.body)
