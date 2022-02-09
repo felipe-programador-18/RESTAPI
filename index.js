@@ -9,17 +9,18 @@ mongoose.Promise = global.Promise
 const bodyParser = require('body-parser')
 api.use(bodyParser({extended: true}))
 
+const path = require('path')
+api.set('view engine','ejs')
+api.set('views', path.join(__dirname,'views'))
+
+api.set(express.static(path.join(__dirname,'public')))
+
+
 const movies = require('./routes/series')
 api.use('/series', movies)
 
-//const series = [{
-    //name:'frinds',
-    //nametwo: 'homem de ferro',
-  //  nametree:'Wolverine'
-//}]
-//api.get('/series', (req,res) => {
-  //  res.send(series)
-//})
+
+
 
 mongoose.
 connect(mongo, {useNewUrlParser: true, 
