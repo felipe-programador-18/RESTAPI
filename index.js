@@ -21,8 +21,10 @@ api.use(express.static(path.join(__dirname,'public')))
 const movies = require('./routes/series')
 api.use('/series', movies)
 
-const teste = require('./routes/series')
-api.use('/',teste)
+//const teste = require('./routes/series')
+//api.use('/',teste)
+
+
 
 
 mongoose.
