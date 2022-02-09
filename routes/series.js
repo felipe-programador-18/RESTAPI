@@ -7,6 +7,13 @@ router.get('/', async (req, res) => {
     res.send(series)
   })
 
+router.get('/', (req, res) =>{
+    
+      res.render('home')
+  
+    })
+  
+
   router.post('/', async (req, res) => {
     const serie = new Serie(req.body)
     try {
