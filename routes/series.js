@@ -8,17 +8,15 @@ router.get('/', async (req, res) => {
   })
 
   // OUTRA GET PARA TENTAR VER SE PEGO O CSS
-  router.get('/', (req, res) =>{
-    if(error){
-    res.render('home', {
-      error:false
-    })
-  }else{
-    res.render('home', {
-      error:('parabens vc consegiu')
-    })
-  }
-  })
+ // router.get('/', async (req, res) =>{
+    //const series = await Serie.find({})
+    //res.render('home', {
+      //series,
+      //error:false
+    //})
+  //})
+  
+  
 
 
   router.post('/', async (req, res) => {
