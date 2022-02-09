@@ -7,11 +7,14 @@ router.get('/', async (req, res) => {
     res.send(series)
   })
 
-router.get('/', (req, res) =>{
+  router.get('/', (req, res) =>{
     
-      res.render('home')
-  
+    res.render('home', {
     })
+
+  })
+
+
   
 
   router.post('/', async (req, res) => {
