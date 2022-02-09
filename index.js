@@ -1,7 +1,7 @@
 const express = require('express')
 const api = express()
 const port = process.env.PORT || 3000
-const organize = require('./lib/organize')
+
 
 const mongo = process.env.MONGO ||  'mongodb://localhost/minhas-series-rest'
 const mongoose = require('mongoose')
