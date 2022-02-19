@@ -3,6 +3,7 @@ const api = express()
 const port = process.env.PORT || 3000
 
 
+// here i am adding way to union api with database mongo!!
 const mongo = process.env.MONGO ||  'mongodb://localhost/minhas-series-rest'
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
@@ -26,7 +27,7 @@ api.use('/series', movies)
 
 
 
-
+// this command of mongoose receive three parameters!!!
 mongoose.
 connect(mongo, {useNewUrlParser: true, 
   useUnifiedTopology: true
