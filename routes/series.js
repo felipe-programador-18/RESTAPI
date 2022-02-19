@@ -7,17 +7,6 @@ router.get('/', async (req, res) => {
     res.send(series)
   })
 
-  // OUTRA GET PARA TENTAR VER SE PEGO O CSS
- // router.get('/', async (req, res) =>{
-    //const series = await Serie.find({})
-    //res.render('home', {
-      //series,
-      //error:false
-    //})
-  //})
-  
-  
-
 
   router.post('/', async (req, res) => {
     const serie = new Serie(req.body)
