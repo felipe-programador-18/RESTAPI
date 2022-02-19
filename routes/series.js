@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
       })
     }
   })
-
+// to deleted
   router.delete('/:id', async (req, res) => {
     await Serie.remove({ _id: req.params.id })
     res.send({
@@ -28,15 +28,18 @@ router.get('/', async (req, res) => {
     })
   })
   
+  // to adding 
   router.get('/:id', async (req, res) => {
     const serie = await Serie.findOne({ _id: req.params.id })
     res.send(serie)
   })
   
+  // to adding and trade name
   router.put('/:id', async (req, res) => {
     const serie = await Serie.findOne({ _id: req.params.id })
     serie.name = req.body.name
     serie.status = req.body.status
+    // try is test to verify if have function
     try {
       await serie.save()
       res.send(serie)
